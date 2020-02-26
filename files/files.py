@@ -7,7 +7,7 @@ def readFile(path):
     fr.close()
     return output
 
-def writeFile(input, path='newFile.txt'):
+def writeFile(input = '', path='newFile.txt'):
     fw = open(path,'w')
     bytesWrited = fw.write(str(input))
     fw.close()
@@ -31,23 +31,6 @@ def count_elapsed_time(f):
 
     return wrapper
 
-@count_elapsed_time
-def sum(nums):
-    answer = 0
-    for num in nums:
-        answer += int(num)
-    return answer
-
-@count_elapsed_time
-def repeatedNumbers(repeatedNumbers, listOfNumbers):
-    output = ''
-    for repeated in repeatedNumbers:
-        count = 0
-        for numberList in listOfNumbers:
-            if repeated == int(numberList):
-                count += 1
-        output += 'The number {} is repeated {} times.\n'.format(repeated, count)
-    return output
 
 newText = ''
 for number in range(1000):
