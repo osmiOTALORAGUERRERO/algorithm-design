@@ -1,7 +1,7 @@
-
+from ..efficiency.functionTime import count_elapsed_time 
 
 @count_elapsed_time
-def sum(nums):
+def sumNums(nums):
     answer = 0
     for num in nums:
         answer += int(num)
