@@ -12,12 +12,12 @@ def writeFile(input = '', path='', file='input.txt'):
     newPath = os.getcwd()
 
     if os.path.exists(os.getcwd()+path):
-        print('true')
         newPath = os.getcwd()+path+'\\'+file
+        print('file {} created: True'.format(path+'\\'+file))
     else:
-        print('false')
         os.mkdir(os.getcwd()+path)
         newPath = os.getcwd()+path+'\\'+file
+        print('file {} created: True'.format(path+'\\'+file))
 
     fw = open(newPath,'w')
     bytesWrited = -1

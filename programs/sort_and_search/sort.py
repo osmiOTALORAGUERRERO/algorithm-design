@@ -7,7 +7,7 @@ def bubble_sort(arr):
         for j in range(0, n-i-1):
             if arr[j+1] < arr[j]:
                 arr[j+1], arr[j] = arr[j], arr[j+1]
-	return arr
+    return arr
 
 @count_elapsed_time
 def insertion(arr):
@@ -33,7 +33,7 @@ def select_sort(arr):
         arr[i], arr[min] = arr[min], arr[i]
     return arr
 
-@count_elapsed_time
+# @count_elapsed_time
 def Quick_Sort(arr):
     less_subArr = []
     greather_subArr = []
