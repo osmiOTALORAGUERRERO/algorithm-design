@@ -15,7 +15,7 @@ def writeFile(input = '', path='', file='input.txt'):
         newPath = os.getcwd()+path+'\\'+file
         print('file {} created: True'.format(path+'\\'+file))
     else:
-        os.mkdir(os.getcwd()+path)
+        os.makedirs(os.getcwd()+path)
         newPath = os.getcwd()+path+'\\'+file
         print('file {} created: True'.format(path+'\\'+file))
 
