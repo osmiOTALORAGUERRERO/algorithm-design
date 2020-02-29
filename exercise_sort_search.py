@@ -6,7 +6,8 @@ import time
 #crear archivo con numeros
 PATH = '\\files\\sort_and_search'
 newText = ''
-for number in range(1000):
+dataNumber = 10000
+for number in range(dataNumber):
     newText += str(random.randrange(1000))+','
 writed = files.writeFile(str(newText.strip(',')), PATH, 'inputNumber.txt')
 
