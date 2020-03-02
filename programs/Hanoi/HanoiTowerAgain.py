@@ -1,5 +1,7 @@
 import math
+from ..efficiency.functionTime import count_elapsed_time
 
+@count_elapsed_time
 def hanoiPower(numberOfNeedles):
   if numberOfNeedles > 0 and numberOfNeedles < 1000:
     hanoi = []

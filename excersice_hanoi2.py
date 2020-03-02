@@ -7,15 +7,25 @@ def parserTower(array):
     while len(array) > 0:
         row = ''
         for list in array:
-            row += str(list.pop(0)) + '\t'
-            if len(list) == 0:
-                array.remove(list)
+            row += str(list.pop(0)) + '\t \t'
+
+        empty = len(array[-1]) == 0
+        while len(array) > 0 and empty:
+            if len(array[-1]) == 0:
+                array.remove(array[-1])
+            if len(array) > 0:
+                empty = len(array[-1]) == 0
+            else:
+                empty = False
         tower = row + '\n' + tower
     return tower
 
 needles = int(input('Ingresa un Numero: '))
-respuesta = hanoiPower(needles)
-print('La respuesta es: {}'.format(respuesta[0]))
-print('--------------------------------')
-print(parserTower(respuesta[1]))
-print('--------------------------------')
+respuesta = HanoiTowerAgain.hanoiPower(needles)
+
+view = 'La respuesta es: {} \n'.format(respuesta[0])
+view += '--------------------------------\n'
+view += parserTower(respuesta[1])
+view += '--------------------------------'
+
+files.writeFile(view, "\\files\\hanoi2", "answer.txt")
