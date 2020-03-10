@@ -1,6 +1,8 @@
 from programs.files import files
 from programs.Hanoi import HanoiTowerAgain
+from programs.Hanoi import hanoi_towers
 
+hanoi_towers.main()
 
 def parserTower(array):
     tower = ''
