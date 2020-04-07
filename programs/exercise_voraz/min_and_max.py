@@ -55,15 +55,7 @@ def getMinMax2(low, high, arr):
     return (max(arr_max1, arr_max2), min(arr_min1, arr_min2))
 
 # Driver code
-arr = [1000, 11, 445, 1, 330, 3000]
-high = len(arr) - 1
-low = 0
-start_time = time.time()
-arr_max, arr_min = getMinMax(arr, len(arr))
-elapsed_time = time.time() - start_time
-print("Elapsed time: %0.10f seconds of function bsRecursive()." % elapsed_time)
-print('Minimum element is ', arr_min)
-print('nMaximum element is ', arr_max)
+
 
 # start_time = time.time()
 # arr_max, arr_min = getMinMax2(low, high, arr)
