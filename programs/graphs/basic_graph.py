@@ -1,3 +1,6 @@
+import matplotlib.pyplot as plt
+import networkx as nx
+
 class Vertex:
     def __init__(self,key):
         self.id = key
@@ -38,7 +41,7 @@ class Graph:
     def __contains__(self,n):
         return n in self.vertList
 
-    def addEdge(self,f,t,weight=0):
+    def addEdge(self,f,t,weight=1):
         if f not in self.vertList:
             nv = self.addVertex(f)
         if t not in self.vertList:
@@ -47,6 +50,38 @@ class Graph:
 
     def getVertices(self):
         return self.vertList.keys()
+
+    def getAdjacencyGraph(self):
+        adjacency = {}
+        for vertex in self.getVertices():
+            connected = {}
+            for neighbour in self.getVertex(vertex).getConnections():
+                print(neighbour)
+                connected[neighbour.id] = self.getVertex(vertex).getWeight(neighbour)
+            adjacency[vertex] = connected
+
+        return adjacency
+
+    def drawGraph(self):
+        DG = nx.DiGraph()
+        # dict-of-dict-of-attribute
+        adj = self.getAdjacencyGraph()
+        e = [(u, v, {'weight': d}) for u, nbrs in adj.items()
+             for v, d in nbrs.items()]
+        DG.update(edges = e, nodes=adj)
+        pos=nx.spring_layout(DG)
+        edge_labels = {(n1,n2): DG[n1][n2]['weight'] for (n1,n2) in DG.edges()}
+        options = {
+            'node_color': 'blue',
+            'node_size': 500,
+            'width': 2,
+            'arrowstyle': '-|>',
+            'arrowsize': 12
+        }
+        nx.draw_networkx_edge_labels(DG,pos,edge_labels=edge_labels)
+        nx.draw_networkx(DG, pos, arrows=True, **options)
+        plt.show()
+
 
     def __iter__(self):
         return iter(self.vertList.values())
