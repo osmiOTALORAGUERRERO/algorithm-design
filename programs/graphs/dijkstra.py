@@ -73,36 +73,3 @@ def make_graph(G, shortPath):
     #         G[label] = neighbors
     #
     # return G
-
-
-if __name__ == '__main__':
-
-    graph = {'c0': {'c1': 5, 'c5': 2},
-            'c1': {'c2': 4},
-            'c5': {'c4': 8, 'c2': 1},
-            'c2': {'c3': 9},
-            'c3': {'c4': 7, 'c5': 3},
-            'c4': {'c0': 1}}
-
-    # get shortest path distances to each node in `graph` from `a`
-    dist, pred = dijkstra(graph, 'c0')
-    p1, p2 = shortest_path(graph, 'c0', 'c3')
-    print(p1, p2)
-    print(dist)
-    make_graph(graph, p2)
-    # assert shortest_path(graph, 'a', 'c3') == list('abcd')
-    # assert dist == {'a': 0, 'c': 3, 'b': 1, 'd': 4}     # min dist from `a`
-    # assert pred == {'b': 'a', 'c': 'b', 'd': 'c'}       # direct predecessors
-
-    graph = {'a': {'b': 14, 'c': 9, 'd': 7},
-             'b': {'a': 14, 'c': 2, 'e': 9},
-             'c': {'a': 9, 'b': 2, 'd': 10, 'f': 11},
-             'd': {'a': 7, 'c': 10, 'f': 15},
-             'e': {'b': 9, 'f': 6},
-             'f': {'c': 11, 'd': 15, 'e': 6}}
-
-    dist, pred = dijkstra(graph, start='a')
-    expected = {'a': 0, 'c': 9, 'b': 11, 'e': 20, 'd': 7, 'f': 20}
-    assert dist == expected
-    print(dist)
-    print(shortest_path(graph, 'c', 'a'))

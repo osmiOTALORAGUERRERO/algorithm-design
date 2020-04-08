@@ -7,7 +7,7 @@ def getMinMax(arr: list, n: int):
     if n == 1:
         max = arr[0]
         min = arr[0]
-        return minmax
+        return (min, max)
 
     # If there are more than one elements, then initialize min
     # and max
