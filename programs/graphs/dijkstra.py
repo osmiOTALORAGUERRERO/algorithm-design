@@ -19,7 +19,7 @@ def dijkstra(G, start, end=None):
         # we may need to update the dist of unexplored successors
         for w in G[v]:                          # successors to v
             if w in U:                          # then w is a frontier node
-                d = D[v] + G[v][w]              # dgs: dist of start -> v -> w
+                d = int(D[v]) + int(G[v][w])              # dgs: dist of start -> v -> w
                 if d < Q.get(w, inf):
                     Q[w] = d                    # set/update dgs
                     P[w] = v                    # set/update predecessor
@@ -29,7 +29,6 @@ def dijkstra(G, start, end=None):
 
 def shortest_path(G, start, end):
     dist, pred = dijkstra(G, start, end)
-    print(dist, pred, 's')
     v = end
     path = [v]
     path2 = []

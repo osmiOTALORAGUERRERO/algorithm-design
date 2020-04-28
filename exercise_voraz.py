@@ -16,7 +16,7 @@ val = [60, 100, 120]
 wt = [10, 20, 30]
 W = 50
 n = len(val)
-print (knapsack_problem.knapSack(W , wt , val , n))
+print ('solución: ', knapsack_problem.knapSack(W , wt , val , n))
 
 #Ejercicio de minimo y maximo voraz punto 6
 print()
