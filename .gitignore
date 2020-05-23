@@ -1,2 +1,4 @@
 /files/**/*.txt
 *__pycache__*
+*.png
+*.txt
