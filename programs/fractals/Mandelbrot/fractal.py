@@ -1,10 +1,6 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# Created on Tue Apr 08 08:45:59 2014
-# License is MIT, see COPYING.txt for more details.
-# @author: Danilo de Jesus da Silva Bellini
+
 """
-Julia and Mandelbrot fractals image creation
+sMandelbrot fractals image creation
 """
 
 from __future__ import division, print_function
